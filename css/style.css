@@ -1610,6 +1610,7 @@ h6 {
   font-size: 16px;
 }
 
+/* Existing WhatsApp floating button */
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -1632,6 +1633,10 @@ h6 {
 .whatsapp-float:hover {
   background: linear-gradient(45deg, #25d366, #1ebe57);
   transform: scale(1.1);
+}
+
+.whatsapp-float.shifted {
+  bottom: 110px;
 }
 
 .companies-section h2 {
@@ -1700,47 +1705,6 @@ h6 {
 
 .company-card {
   position: relative;
-}
-
-.company-inner {
-  height: 100%;
-  padding: 26px 24px 24px;
-  border-radius: 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(17, 24, 39, 0.85),
-    rgba(2, 6, 23, 0.95)
-  );
-  backdrop-filter: blur(22px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85),
-    inset 0 0 0 1px rgba(148, 163, 184, 0.08);
-  transition: all 0.35s ease;
-}
-
-.company-card::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: 22px;
-  background: linear-gradient(
-    135deg,
-    transparent,
-    rgba(59, 130, 246, 0.4),
-    rgba(139, 92, 246, 0.4),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.company-card:hover::before {
-  opacity: 0.6;
-}
-
-.company-card:hover .company-inner {
-  transform: translateY(-8px);
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.95),
-    inset 0 0 0 1px rgba(59, 130, 246, 0.35);
 }
 
 .company-top {
@@ -1880,11 +1844,13 @@ h6 {
   height: 100%;
   padding: 26px 26px 26px 34px;
   border-radius: 18px;
-  background:
-    linear-gradient(165deg, rgba(17,24,39,0.9), rgba(2,6,23,0.96));
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.85),
-    inset 0 0 0 1px rgba(148,163,184,0.08);
+  background: linear-gradient(
+    165deg,
+    rgba(17, 24, 39, 0.9),
+    rgba(2, 6, 23, 0.96)
+  );
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 1px rgba(148, 163, 184, 0.08);
   overflow: hidden;
   transition: all 0.35s ease;
   margin: 10px;
@@ -1898,16 +1864,20 @@ h6 {
   bottom: 20px;
   width: 3px;
   border-radius: 6px;
-  background: linear-gradient(to bottom, transparent, currentColor, transparent);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    currentColor,
+    transparent
+  );
   opacity: 0.9;
 }
 
 /* Hover effect */
 .identity-card:hover {
   transform: translateY(-8px);
-  box-shadow:
-    0 35px 90px rgba(0,0,0,0.95),
-    inset 0 0 0 1px rgba(99,102,241,0.35);
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95),
+    inset 0 0 0 1px rgba(99, 102, 241, 0.35);
 }
 
 /* Glow sweep */
@@ -1952,9 +1922,79 @@ h6 {
   line-height: 1.6;
 }
 
-
 @media (max-width: 768px) {
   .identity-card {
     margin-bottom: 18px;
+  }
+}
+
+.about-section .icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #5a7ffb;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  margin-right: 24px;
+  font-size: 24px;
+}
+.about-section a {
+  font-family: "Open Sans", sans-serif;
+  color: #615978;
+  text-transform: initial;
+  transition: 0.3s;
+}
+.about-section a:hover {
+  color: #5a7ffb;
+}
+.about-section address {
+  margin-bottom: 0;
+}
+.about-section h3 {
+  font-size: 36px;
+  margin-bottom: 48px;
+}
+.dark-mode .about-section a {
+  color: #fff;
+}
+.hero-content img {
+  border-radius: 5px;
+}
+
+.bottom-badge {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: radial-gradient(
+      circle at 15% 10%,
+      rgba(59, 130, 246, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 85% 90%,
+      rgba(139, 92, 246, 0.12),
+      transparent 55%
+    );
+  color: white;
+  padding: 20px 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.bottom-badge .name {
+  font-size: 17px;
+}
+
+@media (min-width: 768px) {
+  .bottom-badge {
+    display: none !important;
   }
 }
